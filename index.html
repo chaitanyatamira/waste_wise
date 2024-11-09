@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoWaste Analytics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-content">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"
+            />
+            <path
+              d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"
+            />
+            <path d="m14 16-3 3v-3" />
+            <path d="M8.293 13.596 7.196 9.5 3.1 10.598" />
+            <path
+              d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 12 3a1.83 1.83 0 0 1 1.563.919l5.015 8.678"
+            />
+            <path d="m8 4 1.344 1.811" />
+          </svg>
+          <h1>EcoWaste Analytics</h1>
+        </div>
+        <nav>
+          <button class="nav-btn active">Dashboard</button>
+          <button class="nav-btn">Reports</button>
+          <button class="nav-btn">Settings</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon reduction"></div>
+          <div class="stat-content">
+            <h3>Monthly Waste Reduction</h3>
+            <p class="stat-value">12.5%</p>
+            <span class="trend up">↑ 2.3%</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon routes"></div>
+          <div class="stat-content">
+            <h3>Active Routes</h3>
+            <p class="stat-value">8</p>
+            <span class="status">All Operating</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon recycling"></div>
+          <div class="stat-content">
+            <h3>Recycling Rate</h3>
+            <p class="stat-value">34.2%</p>
+            <span class="trend up">↑ 1.5%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="chart-section">
+          <div class="section-header">
+            <h2>Waste Forecast</h2>
+            <select id="forecastRange">
+              <option value="7">Next 7 Days</option>
+              <option value="30">Next 30 Days</option>
+            </select>
+          </div>
+          <canvas id="forecastChart"></canvas>
+        </section>
+
+        <section class="map-section">
+          <div class="section-header">
+            <h2>Route Optimization</h2>
+            <button id="optimizeBtn" class="btn-primary">
+              Optimize Routes
+            </button>
+          </div>
+          <div id="map"></div>
+        </section>
+      </div>
+
+      <section class="insights-section">
+        <div class="section-header">
+          <h2>Waste Reduction Insights</h2>
+          <button id="refreshInsights" class="btn-secondary">Refresh</button>
+        </div>
+        <div class="insights-grid" id="insightsContainer">
+          <!-- Insights will be dynamically populated -->
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/forecast.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/insights.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
