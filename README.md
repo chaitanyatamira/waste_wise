@@ -1,5 +1,6 @@
 # waste_wise
-An AI-driven waste management app:
+An AI-driven waste management app
+
 Prerequisites:
 Ensure the following software and services are installed and configured:
 
